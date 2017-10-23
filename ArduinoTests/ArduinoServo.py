@@ -10,6 +10,9 @@ arduino = serial.Serial('/dev/ttyACM0', 9600) #Objeto arduino linkeado al puerto
 print ("Comenzando comunicacion serial con Arduino: ")
 
 while True:
+   # read_serial = arduino.readline()
+   # print read_serial
+
     comando = raw_input('Introduce una A para abrir y una C para cerrar, S para salir: ') #Input por teclado
     arduino.write(comando) #Envia el comando por el puerto serial
     if comando == 'A':
@@ -20,4 +23,3 @@ while True:
         print ('Saliendo, cerrando comunicacion serie.')
         arduino.close() #Cerramos la comunicacion serie
         break
-
